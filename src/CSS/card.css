@@ -1,0 +1,53 @@
+.charContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  background: #ffffff;
+  width: fit-content;
+  box-shadow: 0px 0px 46px -15px rgba(0, 0, 0, 0.67);
+  -webkit-box-shadow: 0px 0px 46px -15px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 0px 0px 46px -15px rgba(0, 0, 0, 0.67);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.charContainer:hover {
+  transform: scale(0.95);
+}
+
+.charName {
+  margin: 10px 0;
+  height: 30px;
+  width: 200px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.charImg {
+  height: 300px;
+  width: 200px;
+}
+
+.charImg img {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .charImg {
+    height: 200px;
+    width: 130px;
+  }
+  .charName {
+    margin: 0;
+    width: 130px;
+    font-size: 0.8em;
+  }
+}

@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.App {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  text-align: center;
+}
+.cardContainer {
+  margin-top: 25px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 220px);
+  grid-gap: 20px;
+}
+
+.title {
+  font-family: "Sacramento", cursive;
+  font-size: 3em;
+}
+
+.charInfoContainer {
+  display: flex;
+
+  position: fixed;
+  width: 80%;
+
+  left: 50%;
+  top: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  transform: translate(-50%, -50%);
+  text-align: left;
+  border-radius: 20px;
+  box-shadow: 0px 0px 67px 2px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 0px 0px 67px 2px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 0px 67px 2px rgba(0, 0, 0, 0.43);
+  overflow: hidden;
+  animation: pop 0.3s ease;
+}
+
+.leftSec {
+  width: 35%;
+}
+.leftSec img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.rightSec {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 65%;
+  padding: 20px;
+  font-size: 2.6vw;
+  font-weight: 800;
+}
+
+.rightSec div span {
+  font-weight: 400;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .cardContainer {
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-gap: 10px;
+  }
+  .charInfoContainer {
+    border-radius: 10px;
+    width: 95%;
+  }
+  .title {
+    font-size: 2em;
+  }
+  .rightSec {
+    padding: 10px;
+  }
+  .close {
+    right: 5px;
+    top: 5px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .rightSec {
+    padding: 3rem;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
