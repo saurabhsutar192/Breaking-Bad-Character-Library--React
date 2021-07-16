@@ -6,13 +6,7 @@ import "./CSS/app.css";
 function App() {
   let [characters, setCharacters] = useState([]);
   let [toggle, setToggle] = useState(false);
-  let [name, setName] = useState();
-  let [birthday, setBirthday] = useState();
-  let [nickname, setNickname] = useState();
-  let [occupation, setOccupation] = useState([]);
-  let [portrayed, setPortrayed] = useState();
-  let [status, setStatus] = useState();
-  let [img, setImg] = useState();
+  let [character, setCharacter] = useState([]);
 
   useEffect(() => {
     caller(endpoints.characters).then((res) => {
@@ -29,14 +23,8 @@ function App() {
             <Card
               key={char.char_id}
               char={char}
-              setName={setName}
-              setBirthday={setBirthday}
-              setNickname={setNickname}
-              setOccupation={setOccupation}
-              setPortrayed={setPortrayed}
-              setStatus={setStatus}
+              setCharacter={setCharacter}
               setToggle={setToggle}
-              setImg={setImg}
             />
           );
         })}
@@ -44,26 +32,26 @@ function App() {
       {toggle && (
         <div className="charInfoContainer">
           <div className="leftSec">
-            <img src={img} />
+            <img src={character.img} alt="x" />
           </div>
           <div className="rightSec">
             <div>
-              Name: <span> {name}</span>
+              Name: <span> {character.name}</span>
             </div>
             <div>
-              Birthday: <span>{birthday}</span>
+              Birthday: <span>{character.birthday}</span>
             </div>
             <div>
-              Nickname: <span>{nickname}</span>
+              Nickname: <span>{character.nickname}</span>
             </div>
             <div>
-              Occupation: <span>{occupation.join(",")}</span>
+              Occupation: <span>{character.occupation.join(",")}</span>
             </div>
             <div>
-              Status: <span>{status}</span>
+              Status: <span>{character.status}</span>
             </div>
             <div>
-              Portrayed: <span>{portrayed}</span>
+              Portrayed: <span>{character.portrayed}</span>
             </div>
           </div>
           <i
