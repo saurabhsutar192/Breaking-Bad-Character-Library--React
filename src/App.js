@@ -45,7 +45,7 @@ function App() {
               Nickname: <span>{character.nickname}</span>
             </div>
             <div>
-              Occupation: <span>{character.occupation.join(",")}</span>
+              Occupation: <span>{character.occupation.join(", ")}</span>
             </div>
             <div>
               Status: <span>{character.status}</span>
